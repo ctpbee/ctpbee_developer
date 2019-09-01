@@ -13,15 +13,9 @@ def create_app():
     app.config.from_pyfile("config.py")
     app.add_risk_gateway(RiskMe)
     data_recorder = DataRecorder("data_recorder", app)
-
     app.start(log_output=False)
     return app
 
 
 if __name__ == '__main__':
     app = create_app()
-    while True:
-        app.query_position()
-        sleep(1)
-        app.query_account()
-        sleep(1)
