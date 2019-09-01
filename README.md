@@ -1,7 +1,9 @@
 # ctpbee_developer
+
+[English Version](https://github.com/ctpbee/ctpbee_developer/blob/master/README_EN.md)
+
 ctpbee的推荐的开放模板
-
-
+ 
 > 合理的架构会让你的工作量极大减少
 
 因为ctpbee的特性，我们才得以推出这个经典的开发案例
