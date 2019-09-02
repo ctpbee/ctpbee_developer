@@ -29,10 +29,7 @@ class DataRecorder(CtpbeeApi):
         pass
 
     def on_account(self, account: AccountData) -> None:
-        if not self.init_flag:
-            print("111")
-            return
-        #
+        """ """
         # print(self.converter.account_df)
 
     def on_init(self, init):
