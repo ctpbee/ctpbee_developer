@@ -19,7 +19,7 @@ class DataRecorder(CtpbeeApi):
 
     def on_contract(self, contract):
         # 订阅所有
-        if contract.symbol in self.instrument_set:
+        if contract.local_symbol in self.instrument_set:
             self.app.subscribe(contract.symbol)
 
     def on_order(self, order):
