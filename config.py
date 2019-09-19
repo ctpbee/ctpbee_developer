@@ -1,3 +1,8 @@
+"""
+* 参数配置模块
+* 大写警告
+"""
+
 CONNECT_INFO = {
     "userid": "089131",
     "password": "350888",
@@ -13,3 +18,4 @@ CONNECT_INFO = {
 INTERFACE = "ctp"
 TD_FUNC = True
 MD_FUNC = True
+CLOSE_PATTERN = "today"

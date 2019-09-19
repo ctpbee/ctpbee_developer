@@ -1,5 +1,3 @@
-from time import sleep
-
 from ctpbee import CtpBee
 
 from action import ActionMe
@@ -8,14 +6,13 @@ from strategy import DataRecorder
 
 
 def create_app():
-    app = CtpBee("last", __name__, action_class=ActionMe, work_mode="forever", refresh=True)
+    app = CtpBee("last", __name__, action_class=ActionMe, risk=RiskMe, refresh=True)
 
     app.config.from_pyfile("config.py")
-    app.add_risk_gateway(RiskMe)
     data_recorder = DataRecorder("data_recorder", app)
-    app.start(log_output=False)
     return app
 
 
 if __name__ == '__main__':
-    app = create_app()
+    from ctpbee import hickey
+    hickey.start_all(app_func=create_app)
