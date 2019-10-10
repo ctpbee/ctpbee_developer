@@ -14,7 +14,7 @@ class DataRecorder(CtpbeeApi):
     def on_trade(self, trade):
         pass
 
-    def on_realtime(self, timed: datetime):
+    def on_realtime(self):
         pass
 
     def on_contract(self, contract):

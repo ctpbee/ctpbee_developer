@@ -35,4 +35,9 @@ app.py 工厂模式运行创建app，可以调用从create_app创建多个不同
 
 ext.py 存放着ctpbee的插件
 
+# 运行命令
+
+`python app.py`
+
 最后希望能极大减少你的工作量，早日实现财富自由
+
