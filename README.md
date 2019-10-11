@@ -29,12 +29,12 @@ class ActionMe(Action):
 # risk.py
 class Risk(RiskLevel):
   
-def before_func(self,*args, **kwargs):
-      print("事前")
-      return True, *args, **kwargs
-
-  def after_func(self, result):
-      print("事后")
+    def before_func(self,*args, **kwargs):
+          print("事前")
+          return True, *args, **kwargs
+    
+      def after_func(self, result):
+          print("事后")
 ```
 
 app.py 工厂模式运行创建app，可以调用从create_app创建多个不同的账户

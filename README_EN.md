@@ -16,20 +16,21 @@ action.py，you can write some operation code, and call it by self.operation in 
 risk.py ，you can write risk code in here. Note that you need to manually bind the function to the risk control manually
 
 ``` risk example
-# action.py
-def func(self):
-  print("I want to do risk control")
-self.app.risk_gateway_class(func)
-
+class ActionMe(Action):
+    def __init__(self, app):
+        super().__init__(app)
+        self.add_risk_check(self.short)
+        self.add_risk_check(self.cancel)
 
 # risk.py
 class Risk(RiskLevel):
-  def before_func(self):
-      print("before")
-      return True
-  def after_func(self, result):
-      print("after")
-```
+  
+    def before_func(self,*args, **kwargs):
+          print("事前")
+          return True, *args, **kwargs
+    
+      def after_func(self, result):
+          print("事后")
 
 app.py create app by factory pattern, and create multiple account by calling it.
 ext.py storing the ctpbee plug-in
