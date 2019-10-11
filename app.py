@@ -19,5 +19,5 @@ if __name__ == '__main__':
     hickey.start_all(app_func=create_app)
 
     # 直接启动
-    app = create_app()
-    app.start()
+    # app = create_app()
+    # app.start()
