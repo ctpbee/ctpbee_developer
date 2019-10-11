@@ -19,14 +19,20 @@ risk.py ，你可以在此处编写你想要的风控代码，值得注意的是
 # action.py
 def func(self):
   print("我想执行风控操作")
-self.app.risk_gateway_class(func)即可
+class ActionMe(Action):
+    def __init__(self, app):
+        super().__init__(app)
+        self.add_risk_check(self.short)
+        self.add_risk_check(self.cancel)
 
 
 # risk.py
 class Risk(RiskLevel):
-  def before_func(self):
+  
+def before_func(self,*args, **kwargs):
       print("事前")
-      return True
+      return True, *args, **kwargs
+
   def after_func(self, result):
       print("事后")
 ```
